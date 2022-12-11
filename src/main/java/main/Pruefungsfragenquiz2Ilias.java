@@ -41,8 +41,6 @@ import model.ilias.qti.Questestinterop;
 import model.ilias.qti.RcardinalityEnum;
 import model.ilias.qti.Respcondition;
 import model.ilias.qti.ResponseLabel;
-import model.pruefungsfragenquiz.AssetId;
-import model.pruefungsfragenquiz.AssetIds;
 import model.pruefungsfragenquiz.Frage;
 import model.pruefungsfragenquiz.Pruefungsfragenquiz;
 import model.pruefungsfragenquiz.Quiz;
