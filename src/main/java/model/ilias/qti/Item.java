@@ -17,7 +17,7 @@ public class Item {
     @JacksonXmlProperty(localName = "qticomment")
     private String qtiComment = "";
     @JacksonXmlProperty(localName = "duration")
-    private String duration = "P0Y0M0DT0H1M0S";
+    private String duration = "P0Y0M0DT0H0M0S";
     @JacksonXmlProperty(localName = "itemmetadata")
     private Itemmetadata itemMetadata = new Itemmetadata();
     @JacksonXmlProperty(localName = "presentation")
