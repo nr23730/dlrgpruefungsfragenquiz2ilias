@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Map.Entry;
 
 import org.apache.commons.io.FileUtils;
@@ -154,6 +156,15 @@ public class Pruefungsfragenquiz2Ilias {
     }
 
     private static Questestinterop generateQti(String iliasId, Collection<Frage> fragen, Map<Integer, String> assets) {
+
+        Set<Frage> multiple = new HashSet<>();
+        fragen.forEach(f -> {
+            if (f.getAnzAwKorrekt() > 1) {
+                multiple.add(f);
+            }
+        });
+        boolean isMultiplechoice = !multiple.isEmpty();
+
         Questestinterop qti = new Questestinterop();
         fragen.forEach(f -> {
             Item i = new Item();
@@ -172,7 +183,7 @@ public class Pruefungsfragenquiz2Ilias {
 
             }
 
-            if (f.getAnzAwKorrekt() > 1) {
+            if (isMultiplechoice) {
                 i.getPresentation().getFlow().getResponseLid().setIdent(IdentEnum.MCMR);
                 i.getPresentation().getFlow().getResponseLid().setRcardinality(RcardinalityEnum.Multiple);
                 Qtimetadatafield mcm = new Qtimetadatafield();
