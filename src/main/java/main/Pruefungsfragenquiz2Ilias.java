@@ -221,10 +221,6 @@ public class Pruefungsfragenquiz2Ilias {
         iliasVersion.setFieldlabel("ILIAS_VERSION");
         iliasVersion.setFieldentry("7.14 2022-09-26");
         metadata.add(iliasVersion);
-        Qtimetadatafield author = new Qtimetadatafield();
-        author.setFieldlabel("AUTHOR");
-        author.setFieldentry("Niklas Reimer");
-        metadata.add(author);
         Qtimetadatafield editMode = new Qtimetadatafield();
         editMode.setFieldlabel("additional_cont_edit_mode");
         editMode.setFieldentry("default");
