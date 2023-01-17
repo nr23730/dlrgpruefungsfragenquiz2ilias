@@ -169,10 +169,10 @@ public class Pruefungsfragenquiz2Ilias {
             qti.getItem().add(i);
 
             i.setIdent("il_" + iliasId + "_qst_" + f.getId());
-            i.setTitle("Frage " + f.getId());
+            i.setTitle("Frage " + (f.getCode().length() > 0 ? f.getCode() : f.getId()));
             addMetadata(i.getItemMetadata().getQtimetadata().getQtimetadatafield());
 
-            i.getPresentation().setLabel("Frage " + f.getId());
+            i.getPresentation().setLabel("Frage " + (f.getCode().length() > 0 ? f.getCode() : f.getId()));
             i.getPresentation().getFlow().getMaterial().getMattext().setText(f.getFrage());
             if (assets.containsKey(f.getId())) {
                 String text = i.getPresentation().getFlow().getMaterial().getMattext().getText();
