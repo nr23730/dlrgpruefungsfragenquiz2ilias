@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "id",
+        "fachbereich",
         "bezeichnung",
         "code",
         "kurzBez",
@@ -23,6 +24,8 @@ public class Quiz {
 
     @JsonProperty("id")
     private Integer id;
+    @JsonProperty("fachbereich")
+    private String fachbereich;
     @JsonProperty("bezeichnung")
     private String bezeichnung;
     @JsonProperty("code")
@@ -46,6 +49,16 @@ public class Quiz {
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @JsonProperty("fachbereich")
+    public String getFachbereich() {
+        return fachbereich;
+    }
+
+    @JsonProperty("fachbereich")
+    public void setFachbereich(String fachbereich) {
+        this.fachbereich = fachbereich;
     }
 
     @JsonProperty("bezeichnung")
